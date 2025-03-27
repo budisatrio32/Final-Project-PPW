@@ -1,0 +1,782 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;700;800&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 9px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgb(0, 0, 0, 0.9);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #859F3D;
+	border-radius: 10px;
+}
+
+body {
+	font-family: 'Nunito';
+	font-size: 16px;
+	line-height: 1.6;
+	color: #1A1A19;
+	overflow-x: hidden;
+	min-height: 100dvh;
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Poppins';
+	font-weight: 600;
+}
+
+h1 {
+	font-size: 64px;
+	line-height: 1.2;
+}
+
+h2 {
+	font-size: 56px;
+	margin-bottom: 40px;
+	line-height: 1.2;
+}
+
+h3 {
+	font-size: 48px;
+	margin-bottom: 30px;
+	line-height: 1.2;
+}
+
+h4 {
+	font-size: 24px;
+	margin-bottom: 15px;
+}
+
+h5 {
+	font-size: 12px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+}
+
+.container {
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 0 40px;
+	width: 100%;
+}
+
+/* Header styles */
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 25px 0;
+	background-color: rgba(26, 26, 25, 0.7);
+	z-index: 100;
+}
+
+.header-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 0 40px;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo img {
+	height: 50px;
+}
+
+.nav-menu {
+	display: flex;
+	gap: 40px;
+}
+
+.nav-menu a {
+	color: white;
+	font-weight: 800;
+	font-size: 20px;
+	transition: color 0.3s ease;
+	position: relative;
+}
+
+.nav-menu a::before {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	height: 5px;
+	width: 100%;
+	background-color: #859F3D;
+	border-radius: 50px;
+	transform: scaleX(0);
+	transition: transform 0.3s ease;
+}
+
+.nav-menu a:hover::before {
+	color: #859F3D;
+	transform: scaleX(1);
+}
+
+.btn {
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+	font-weight: 800;
+	padding: 12px 30px;
+	border-radius: 50px;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	display: inline-block;
+}
+
+.btn-primary {
+	background-color: #859F3D;
+	color: white;
+}
+
+.btn-primary:hover {
+	background-color: #31511E;
+	transform: translateY(-3px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero section */
+.hero {
+	position: relative;
+	width: 100%;
+	height: 100dvh;
+	min-height: 800px;
+	display: flex;
+	align-items: center;
+	color: #F6FCDF;
+	background: url('happy-hiker-walks-through-jungle-with-backpack.jpg');
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+}
+
+.hero::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+	position: relative;
+	z-index: 1;
+	max-width: 950px;
+}
+
+.hero h1 {
+	font-size: 64px;
+	margin-bottom: 30px;
+}
+
+.hero p {
+	display: flex;
+	font-size: 24px;
+	margin-bottom: 40px;
+	max-width: 950px;
+}
+
+.rating {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	gap: 10px;
+}
+
+.rating-number {
+	font-size: 55px;
+	font-weight: 700;
+}
+
+.star-container {
+display: inline-block;
+position: relative;
+justify-content: start;
+}
+
+.stars-empty {
+color: #e7e7e7;
+display: inline-block;
+font-size: 18px;
+}
+
+.stars-filled {
+color: #FBBC05;
+display: flex;
+position: absolute;
+top: 0;
+left: 0;
+overflow: hidden;
+white-space: nowrap;
+font-size: 18px;
+}
+
+.reviews {
+	font-size: 15px;
+	color: #F8F8F8;
+}
+
+/* Features section */
+.features {
+	padding: 120px 0;
+	background-color: #1A1A19;
+	color: #F6FCDF;
+}
+
+.features-container {
+	display: flex;
+	gap: 60px;
+	align-items: center;
+}
+
+.features-text {
+	flex: 1;
+	text-align: right;
+}
+
+.features-text p {
+	font-size: 24px;
+	text-align: right;
+}
+
+.features-video {
+	flex: 1;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.features-video video {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Why us section */
+.why-us {
+	padding: 120px 0;
+	background-color: #1A1A19;
+}
+
+.cards-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+}
+
+.card {
+	background-color: #F6FCDF;
+	padding: 40px;
+	border-radius: 20px;
+	height: 100%;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+	margin-bottom: 30px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+}
+
+.card-title {
+	margin-bottom: 15px;
+	font-weight: 700;
+	font-size: 22px;
+}
+
+.card p {
+	font-size: 18px;
+}
+
+/* Testimonials section */
+.testimonials {
+	padding: 120px 0;
+	background-color: #1A1A19;
+	color: #000;
+}
+
+.header-page2{
+	text-align: center;
+	color: #F6FCDF;
+}
+
+.testimonials-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+}
+
+.testimonial-card {
+	background-color: #F6FCDF;
+	padding: 40px;
+	border-radius: 20px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	height: 100%;
+}
+
+.testimonial-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.quote-mark {
+	color: #859F3D;
+	font-size: 100px;
+	margin-bottom: 10px;
+	line-height: 1;
+}
+
+.testimonial-text {
+	margin-bottom: 30px;
+	font-size: 18px;
+}
+
+.testimonial-author {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.author-image {
+	overflow: hidden;
+}
+
+.author-name {
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.author-status {
+	color: #666;
+}
+
+/* FAQ section */
+.faq {
+	padding: 120px 0;
+	background-color: #1A1A19;
+}
+
+.faq-item {
+	margin-bottom: 40px;
+	background-color: white;
+	padding: 30px;
+	border-radius: 15px;
+	box-shadow: 0 5px 15px rgba(255, 253, 253, 0.05);
+	transition: transform 0.3s ease;
+}
+
+.faq-item:hover{
+	transform: translateY(-6px);
+}
+
+.faq-question {
+	font-weight: 700;
+	margin-bottom: 15px;
+	font-size: 22px;
+	color: #31511E;
+}
+
+.faq-answer {
+	margin-bottom: 0;
+	font-size: 18px;
+}
+
+/* CTA section */
+.cta {
+	padding: 120px 0;
+	background-image: url('rear-view-young-backpacker-couple-sitting-relax-front-tent-near-lake-with-coffee-set-making-fresh-coffee-grinder-while-camping-trip-summer-vacation.jpg');
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	color: #F6FCDF;
+}
+
+.cta::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.cta-content {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.cta-content p {
+	font-size: 22px;
+	margin-bottom: 40px;
+}
+
+.cta .btn {
+	font-size: 22px;
+	padding: 15px 40px;
+}
+
+/* Footer */
+footer {
+	background-color: #31511E;
+	color: white;
+	padding: 80px 0 30px;
+}
+
+.footer-content {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 60px;
+	margin-bottom: 40px;
+}
+
+.footer-column h4 {
+	margin-bottom: 30px;
+	font-size: 28px;
+}
+
+.footer-column p {
+	font-size: 18px;
+	line-height: 1.7;
+}
+
+.footer-links {
+	list-style: none;
+}
+
+.footer-links li {
+	margin-bottom: 15px;
+}
+
+.footer-links a {
+	font-size: 18px;
+	transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+	color: #859F3D;
+}
+
+.contact-info {
+	display: flex;
+	gap: 15px;
+	margin-bottom: 20px;
+	font-size: 18px;
+	align-items: center;
+}
+
+.icon {
+	font-size: 24px;
+}
+
+.copyright {
+	text-align: center;
+	padding-top: 30px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	font-size: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .features-container {
+        flex-direction: column;
+    }
+    
+    .features-text, .features-video {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .features-video video {
+        max-width: 600px;
+    }
+	.features p {
+		font-size: 1rem;
+		text-align: center;
+	}
+	
+	.features-video video {
+		max-width: 400px;
+		display: flex;
+		margin: 0 auto;
+		justify-content: center;
+		border-radius: 20px;
+	}
+
+    .why-us h2 {
+        font-size: 2.2rem;
+    }
+
+    .testimonial h2{
+        font-size: 2.2rem;
+    }
+
+    .quote-mark{
+        margin-bottom: 0px;
+        line-height: 0.5;
+    }
+
+    .faq h2{
+        font-size: 2.2rem;
+    }
+
+    .cta h2{
+        font-size: 2.2rem;
+    }
+
+
+	.cards-container {
+		grid-template-columns: repeat(1, minmax(250px, 1fr));
+	}
+
+    .testimonials-grid {
+		grid-template-columns: repeat(1, minmax(250px, 1fr));
+    }
+
+    .footer-content {
+		grid-template-columns: repeat(1, minmax(250px, 1fr));
+    }
+}
+
+/* Tablets and large phones */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+		
+		.btn.btn-primary {
+			display: none;
+		}
+
+    }
+    
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .nav-menu a{
+        width: 100%;
+		align-items: center;
+		text-align: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+		font-size: 1.2rem;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-menu a {
+        padding: 10px 0;
+        display: block;
+        text-align: center;
+    }
+    
+    /* Menghilangkan tombol sign up */
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .features h2 {
+        font-size: 1.8rem;
+    }
+	.features p {
+		font-size: 1rem;
+		text-align: center;
+	}
+	
+	.features-video video {
+		max-width: 400px;
+		display: flex;
+		margin: 0 auto;
+		justify-content: center;
+		border-radius: 20px;
+	}
+
+    .why-us h2 {
+        font-size: 2rem;
+    }
+
+    .testimonial h2{
+        font-size: 2rem;
+    }
+
+    .quote-mark{
+        margin-bottom: 0px;
+        line-height: 0.5;
+    }
+
+    .faq h2{
+        font-size: 2rem;
+    }
+
+    .cta h2{
+        font-size: 2rem;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    .logo img {
+        height: 30px;
+    }
+
+	.nav-menu a {
+		font-size: 0.8rem;
+	}
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .hero {
+        padding: 60px 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+    }
+    
+    .rating {
+        flex-direction: column;
+		gap: 0px;
+    }
+    
+    .rating-number {
+        margin-right: 0;
+    }
+    
+    .features {
+        padding: 60px 0;
+    }
+    
+    .features h2 {
+        font-size: 1.5rem;
+    }
+    
+    .features p {
+        font-size: 0.9rem;
+    }
+
+    .why-us h2 {
+        font-size: 1.5rem;
+    }
+
+    .testimonial h2{
+        font-size: 1.5rem;
+    }
+
+    .quote-mark{
+        margin-bottom: 0px;
+        line-height: 0.5;
+    }
+
+    .faq h2{
+        font-size: 1.5rem;
+    }
+
+    .cta h2{
+        font-size: 1.5rem;
+    }
+}
